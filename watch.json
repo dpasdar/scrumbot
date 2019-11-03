@@ -1,0 +1,9 @@
+{
+    "restart": {
+      "include": [
+        "\\.ts$",
+        "\\.json$"
+      ]
+    },
+    "throttle": 3000
+}
