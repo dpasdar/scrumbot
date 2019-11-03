@@ -1,0 +1,33 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "TICKET NUMBER",
+            "size": "large",
+            "weight": "bolder"
+        },
+        {
+            "type": "FactSet",
+            "facts": [
+                {
+                    "title": "Summary",
+                    "value": "whatever"
+                },
+                {
+                    "title": "Current Estimate",
+                    "value": "whatever"
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "isSubtle": true,
+            "size": "small",
+            "text": "Please enter the estimations. Type anything other than numbers to publish..."
+        }
+    ],
+    "actions": []
+}

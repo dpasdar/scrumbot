@@ -1,0 +1,21 @@
+{
+    "compileOnSave": true,
+    "typescript.tsdk": "node_modules/typescript/lib/",
+    "compilerOptions": 
+    {
+        "module": "commonjs", 
+        "target": "es6",
+        "declaration": true,
+        "removeComments": true,
+        "outDir": "./lib",
+        "composite": true,
+        "rootDir": "./src",
+        "resolveJsonModule": true,
+        "rootDirs": ["./src", "./resources"],
+        "sourceMap": true,
+        "incremental": true,
+        "esModuleInterop": true, 
+        "tsBuildInfoFile": "./lib/.tsbuildinfo"
+    },
+    "include": ["./src/**/*", "./src/**/*.json"]
+}
