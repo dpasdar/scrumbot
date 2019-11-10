@@ -1,5 +1,5 @@
 # SDK4 Teams Scrum Poker bot with Typescript
-![](recording.gif)
+![](screen-recording.gif)
 
 [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/remix/scrumbot?GLITCH_NO_LINT=true&MICROSOFT_APP_ID=NeedToSetThis&MICROSOFT_APP_PASSWORD=NeedToSetThis&JIRA_TICKET_PREFIX=NeedToSetThis&JIRA_ESTIMATION_CUSTOM_FIELD_NAME=NeedToSetThis&JIRA_AUTH_HEADER=NeedToSetThis&JIRA_SERVER_URL=NeedToSetThis&ENV=PROD)
 
