@@ -1,35 +1,78 @@
 {
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "type": "AdaptiveCard",
-    "version": "1.0",
-    "body": [
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "TICKET NUMBER",
+      "size": "large",
+      "weight": "bolder"
+    },
+    {
+      "type" : "FactSet",
+      "facts" : [
         {
-            "type": "TextBlock",
-            "text": "TICKET NUMBER",
-            "size": "large",
-            "weight": "bolder"
+          "title" : "Summary",
+          "value" : "whatever"
         },
         {
-			"type" : "FactSet",
-			"facts" : [
-				{
-					"title" : "Summary",
-					"value" : "whatever"
-                },
-                {
-					"title" : "Current Estimate",
-					"value" : "whatever"
-				}
-			]
-		},
-        {
-            "type": "TextBlock",
-            "isSubtle": true,
-            "size" : "small",
-            "text": "Please enter the estimations. Type anything other than numbers to publish..."
+          "title" : "Current Estimate",
+          "value" : "whatever"
         }
-    ],
-    "actions": [
-        
-    ]
+      ]
+    },
+    {
+      "type": "Input.ChoiceSet",
+      "id": "userEstimate",
+      "style": "compact",
+      "value": "3",
+      "choices": [
+        {
+          "title": "0",
+          "value": "0"
+        },
+        {
+          "title": "1",
+          "value": "1"
+        },
+        {
+          "title": "2",
+          "value": "2"
+        },
+        {
+          "title": "3",
+          "value": "3"
+        },
+        {
+          "title": "5",
+          "value": "5"
+        },
+        {
+          "title": "8",
+          "value": "8"
+        },
+        {
+          "title": "13",
+          "value": "13"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Add Estimate",
+      "data": {
+        "action": "add"
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Finish",
+      "data": {
+        "action": "finish"
+      }
+    }
+  ]
 }

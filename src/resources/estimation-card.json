@@ -45,10 +45,10 @@
             ]
         },
         {
-			"type": "Input.Text",
-			"id": "customEstimate",
-			"placeholder" : "Or enter a custom estimation"
-		}
+            "type": "Input.Text",
+            "id": "customEstimate",
+            "placeholder" : "Or enter a custom estimation"
+        }
     ],
     "actions": [
         {
