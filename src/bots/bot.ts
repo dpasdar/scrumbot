@@ -47,16 +47,15 @@ export class ScrumJiraBot extends ActivityHandler {
     }
     async processSubmitAction(turnContext, conversationData) {
         const activityValue = turnContext.activity.value;
-        console.log('received activity', activityValue)
         if(activityValue.action === 'cancel') {
             this.cancel(conversationData);
         } else if(activityValue.action === 'add' && activityValue.userEstimate) {
-            conversationData.estimates.push(activityValue.userEstimate);
+            this.addUserEstimate(conversationData, turnContext.activity.from.name, activityValue.userEstimate);
         } else if(activityValue.action === 'finish') {
             if(conversationData.estimates.length > 0) {
                 var card = estimationCard;
-                card.body[4].value = Math.max(...conversationData.estimates).toString();
-                card.body[4].choices = conversationData.estimates.map((s: string) => ({title: s, value: s}));
+                card.body[4].value = Math.max(...conversationData.estimates.map((u: UserEstimate) => u.estimate)).toString();
+                card.body[4].choices = conversationData.estimates.map((u: UserEstimate) => ({title: `${u.name}: ${u.estimate}`, value: u.estimate}));
                 card.body[1].text = conversationData.ticket.key;
                 card.body[2].text = conversationData.ticket.summary;
                 await turnContext.sendActivity({
@@ -72,6 +71,15 @@ export class ScrumJiraBot extends ActivityHandler {
                 await this.publishToJira(conversationData.ticket, estimate);
             }
             this.cancel(conversationData);
+        }
+
+    }
+    private addUserEstimate(conversationData, name, estimate) {
+        const found = conversationData.estimates.find(u => u.name === name);
+        if(found) {
+            found.estimate = estimate;
+        } else {
+            conversationData.estimates.push(new UserEstimate(name, estimate));
         }
 
     }
@@ -140,5 +148,11 @@ export class JiraTicket {
                 public summary: string,
                 public link:string,
                 public estimation:string
+    ) {}
+}
+
+export class UserEstimate {
+    constructor(public name: string,
+                public estimate: number
     ) {}
 }
