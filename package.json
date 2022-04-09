@@ -53,7 +53,7 @@
     "botbuilder-azure": "^4.5.3",
     "botbuilder-dialogs": "^4.5.3",
     "botframework-config": "^4.5.3",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "dotenv": "^8.0.0",
     "restify": "~8.3.3",
     "request-promise-native": "~1.0.7"
